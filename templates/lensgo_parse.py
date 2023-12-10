@@ -10,18 +10,17 @@ class MorelinzParse:
         self.product = ProductInfo()
 
     def __get_product_info(self, product_card):
-        name = product_card.query_selector('a').get_attribute('title')
-        if product_card.query_selector('.items-list__discount-price.discount-block') is None:
-            price = product_card.query_selector('.items-list__item-price').inner_text()
+        name = product_card.query_selector('.name').inner_text()
+        if product_card.query_selector('.price-old-action') is None:
+            price = product_card.query_selector('.price-normal').inner_text()
             discount_price = price
         else:
-            price = product_card.query_selector('.discount-price').inner_text()
-            discount_price = product_card.query_selector('.items-list__item-price').inner_text()
+            price = product_card.query_selector('.price-old-action').inner_text()
+            discount_price = product_card.query_selector('.price-normal').inner_text()
 
-        url = 'https://morelinz.ru' + product_card.query_selector('a').get_attribute('href')
-        shop = 'morelinz.ru'
-        img = 'https://morelinz.ru' + product_card.query_selector('img').get_attribute('src')
-        img = img.replace(' ', '%20')
+        url = product_card.query_selector('.product-img.has-second-image').get_attribute('href')
+        shop = 'lensgo.ru'
+        img = product_card.query_selector('img').get_attribute('src')
 
         self.product = ProductInfo(name, price_in_numbers(price), price_in_numbers(discount_price), shop, url, img)
 
@@ -35,9 +34,8 @@ class MorelinzParse:
                               'Chrome/109.0.0.0 Safari/537.36 '
             })
             self.page = self.context.new_page()
-            self.page.goto(f"https://morelinz.ru/catalog.html?keyword={self.query}")
-            # self.page.wait_for_selector('.row.items-list.items-list--container.browse-view')
+            self.page.goto(f"https://lensgo.ru/search?search={self.query}")
 
-            objects = self.page.query_selector_all('.col-md-4.col-xs-6.col-xxs-12.items-list__block')
+            objects = self.page.query_selector_all('.product-layout.has-countdown.has-extra-button')
             for obj in objects:
                 self.__get_product_info(obj)
