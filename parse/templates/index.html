@@ -15,34 +15,11 @@
         <button type="submit"><img src="../static/bookmark-full.svg"></button>
       </form>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Искать линзы" aria-label="Search">
+        <input class="form-control me-2" name="search-query" type="search" placeholder="Искать линзы" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Поиск</button>
       </form>
     </div>
 
-    <div class="rearch-result">
-
-      <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="https://morelinz.ru/images/virtuemart/product/resized/ACUVUE%20OASYS%201-DAY_30_left_400x400.png" class="img-fluid rounded-start" alt="">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <!--product from db-->
-              <h5 class="card-name">{{ product.get_name() }}</h5>
-              <p class="card-shop">{{ product.get_shop() }}</p>
-              <div class="card-price-block">
-                {% if product.get_price() == product.get_discount_price() %}
-                  <p class="card-discounted-price">{{ product.get_discount_price() }} руб.</p>
-                {% else %}
-                  <p class="card-price"><s>{{ product.get_price() }} руб.</s></p>
-                  <p class="card-discounted-price">{{ product.get_price() }} руб.</p>
-                {% endif %}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    
   </body>
 </html>

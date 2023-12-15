@@ -24,3 +24,8 @@ class Collect:
             print(product.get_discount_price(), product.get_name(), product.get_img())
 
         return self.all_products
+    
+    def new_query(self, new_query):
+        self.old_query = self.query
+        self.all_products = []
+        self.query = new_query
