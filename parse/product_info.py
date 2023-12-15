@@ -1,11 +1,12 @@
 class ProductInfo:
-    def __init__(self, name='', price='', discount_price='', shop='', url='', img=''):
+    def __init__(self, name='', price='', discount_price='', shop='', url='', img='', in_bookmarks=False):
         self._name = name
         self._price = price
         self._discount_price = discount_price
         self._shop = shop
         self._url = url
         self._img = img
+        self.in_bookmarks = in_bookmarks
 
     def get_name(self):
         return self._name
@@ -24,3 +25,6 @@ class ProductInfo:
 
     def get_img(self):
         return self._img
+
+    def set_bookmark(self, flag):
+        self.in_bookmarks = flag
