@@ -64,7 +64,7 @@ def index():
 def search():
     query = request.form['search-query']
     collect.new_query(query)
-    return render_template('result.html', search_products=enumerate(collect.collect_products(), search_query=query))
+    return render_template('result.html', search_products=enumerate(collect.collect_products()), search_query=query)
 
 
 if __name__ == "__main__":
