@@ -11,10 +11,10 @@
   <body>
 
     <div class="search-bar">
-      <form class="bookmarks">
+      <form action="/show_bookmarks/" class="bookmarks">
         <button type="submit"><img src="../static/bookmark-full.svg"></button>
       </form>
-      <form class="d-flex" role="search">
+      <form action="/search/" method="POST" class="d-flex" role="search">
         <input class="form-control me-2" name="search-query" type="search" placeholder="Искать линзы" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Поиск</button>
       </form>

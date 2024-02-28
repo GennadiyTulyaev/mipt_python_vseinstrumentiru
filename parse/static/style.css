@@ -10,6 +10,13 @@
   justify-content: center;
 }
 
+.search-result {
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
 .d-flex {
   min-width: 22rem;
 }
@@ -21,6 +28,10 @@
 .bookmarks img {
   height: 2rem;
   width: 2rem;
+}
+
+.card-img {
+  max-width: 200px;
 }
 
 .card-discounted-price {

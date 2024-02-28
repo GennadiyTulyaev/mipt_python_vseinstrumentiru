@@ -28,3 +28,6 @@ class ProductInfo:
 
     def set_bookmark(self, flag):
         self.in_bookmarks = flag
+
+    def is_in_bookmarks(self):
+        return self.in_bookmarks

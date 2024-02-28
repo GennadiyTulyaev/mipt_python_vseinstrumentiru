@@ -9,7 +9,6 @@ class LensgoParse:
         self.product = ProductInfo()
         self.products_list = []
 
-
     def __get_product_info(self, product_card):
         name = product_card.query_selector('.name').inner_text()
         if product_card.query_selector('.price-old-action') is None:
@@ -38,7 +37,7 @@ class LensgoParse:
             self.page = self.context.new_page()
             self.page.goto(f"https://lensgo.ru/search?search={self.query}")
 
-            objects = self.page.query_selector_all('.product-layout.has-countdown.has-extra-button')
+            objects = self.page.query_selector_all('.product-layout.has-extra-button')
             for obj in objects:
                 self.__get_product_info(obj)
 
