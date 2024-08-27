@@ -1,0 +1,50 @@
+* {
+  padding:0;
+  margin:0;
+}
+
+.search-bar {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.search-result {
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.d-flex {
+  min-width: 22rem;
+}
+
+.bookmarks {
+  margin-right: 0.5rem;
+}
+
+.bookmarks img {
+  height: 2rem;
+  width: 2rem;
+}
+
+.card-img {
+  max-width: 200px;
+}
+
+.card-discounted-price {
+  font-size: medium;
+}
+
+.card-price {
+  font-size: small;
+}
+
+.card {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
